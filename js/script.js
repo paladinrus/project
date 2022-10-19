@@ -1,56 +1,51 @@
-//const hamburger = 0,
-  //    fries = 0,
-    //  cola = 0;
-
-
-console.log(hamburger === 3 && cola && fries);
-
-//Оператор И всегда возвращает первое ложное значение, если оно есть, на нем он запинается и его он возвращает и дальше код уже не идет 
-//Если все аргументы верны, код дошел до конца, то возвращается значение последнего аргумента
-
-console.log(1 && 0);
-console.log(1 && 5);
-console.log(null && 5);
-console.log(0 && 'gchghfghfg');
-
-
-
-if (hamburger === 3 && cola === 1 && fries) {
-    console.log('Все сыты');
-} else {
-    console.log('Мы уходим!');
+for (let i = 0; i < 3; i++) {
+    console.log(i);
+    for (let j = 0; j < 3; j++) {
+        console.log(j);
+    }
 }
 
-if (hamburger || cola || fries) {
-    console.log('Все довольны');
-} else {
-    console.log('Мы уходим!');
+// *
+// **
+// ***
+// ****
+// *****
+// ******
+
+let result = '';
+const length = 7;
+
+for (let i = 1; i < length; i++) {
+
+    for (let j = 0; j < i; j++) {
+        result += '*';
+    }
+    
+    result += '\n'; //+= Сложение с присваиванием 
 }
-//возвращает последнее ложное значение
-//возвращает первую правду
-console.log(hamburger || cola || fries);
 
-
-let johnReport, alexReport, samReport, mariaReport = 'done';
-
-console.log(johnReport || alexReport || samReport || mariaReport);
+console.log(result);
 
 
 
-
-const hamburger = 3,
-      fries = 3,
-      cola = 0,
-      nuggets = 2;
-
-
-if (hamburger === 3 && cola === 2 || fries === 3 && nuggets) {
-console.log('Все довольны');
-} else {
-console.log('Мы уходим!');
+first: for (let i = 0; i < 3; i++) {
+    console.log(`First level: ${i}`);
+    for (let j = 0; j < 3; j++) {
+        console.log(`Second level : ${j}`);
+        for (let k = 0; k < 3; k++) {
+            if (k === 2) continue first;
+            console.log(`Thurd level : ${k}`);
+        }
+    }
 }
-// вернет 2
-console.log(hamburger === 3 && cola === 2 || fries === 3 && nuggets);
 
-//не
-console.log(!0);
+first: for (let i = 0; i < 3; i++) {
+    console.log(`First level: ${i}`);
+    for (let j = 0; j < 3; j++) {
+        console.log(`Second level : ${j}`);
+        for (let k = 0; k < 3; k++) {
+            if (k === 2) break first;
+            console.log(`Thurd level : ${k}`);
+        }
+    }
+}
